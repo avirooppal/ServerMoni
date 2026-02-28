@@ -1,0 +1,33 @@
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# MacOS
+.DS_Store
+
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Go / Backend
+backend/api.exe
+backend/api
+backend/bin/
+backend/vendor/
+
+# Environment Variables
+.env
+backend/.env
+
+# Temporary and Log files
+*.log
+*.csv
+tmp/
+temp/

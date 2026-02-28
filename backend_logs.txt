@@ -1,0 +1,353 @@
+Starting server on port 5001...
+2026/02/28 07:42:13 No .env file found, using system environment variables
+2026/02/28 07:42:23 172.18.0.1:59732 GET /api/all
+2026/02/28 07:42:24 http: panic serving 172.18.0.1:59732: runtime error: invalid memory address or nil pointer dereference
+goroutine 19 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1947 +0xbe
+panic({0x70b520?, 0x9f6820?})
+	/usr/local/go/src/runtime/panic.go:792 +0x132
+github.com/avirooppal/gosysutil/api.HandleAll({0x7de638, 0xc00019e000}, 0xc0000f99f0?)
+	/app/api/server.go:317 +0x1ec6
+net/http.HandlerFunc.ServeHTTP(0xc0000c20c0?, {0x7de638?, 0xc00019e000?}, 0xc0000f9a18?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00009e1b0?, {0x7de638, 0xc00019e000}, 0xc0000dc280)
+	/usr/local/go/src/net/http/server.go:2822 +0x1c4
+main.main.func1({0x7de638, 0xc00019e000}, 0xc0000dc280)
+	/app/cmd/api/main.go:48 +0x147
+net/http.HandlerFunc.ServeHTTP(0xc00009f980?, {0x7de638?, 0xc00019e000?}, 0x763fb4?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+main.main.corsMiddleware.func3({0x7de638, 0xc00019e000}, 0xc0000dc280)
+	/app/cmd/api/main.go:27 +0x146
+net/http.HandlerFunc.ServeHTTP(0x46c0d9?, {0x7de638?, 0xc00019e000?}, 0xc0000f9b70?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc00009f890?}, {0x7de638?, 0xc00019e000?}, 0x6?)
+	/usr/local/go/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000ea240, {0x7dea50, 0xc00009f7a0})
+	/usr/local/go/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/usr/local/go/src/net/http/server.go:3454 +0x485
+2026/02/28 07:42:25 172.18.0.1:48444 GET /api/all
+2026/02/28 07:42:26 http: panic serving 172.18.0.1:48444: runtime error: invalid memory address or nil pointer dereference
+goroutine 49 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1947 +0xbe
+panic({0x70b520?, 0x9f6820?})
+	/usr/local/go/src/runtime/panic.go:792 +0x132
+github.com/avirooppal/gosysutil/api.HandleAll({0x7de638, 0xc0000000e0}, 0xc00025a9f0?)
+	/app/api/server.go:317 +0x1ec6
+net/http.HandlerFunc.ServeHTTP(0xc0000c20c0?, {0x7de638?, 0xc0000000e0?}, 0xc00025aa18?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00009e1b0?, {0x7de638, 0xc0000000e0}, 0xc00022e500)
+	/usr/local/go/src/net/http/server.go:2822 +0x1c4
+main.main.func1({0x7de638, 0xc0000000e0}, 0xc00022e500)
+	/app/cmd/api/main.go:48 +0x147
+net/http.HandlerFunc.ServeHTTP(0xc000255410?, {0x7de638?, 0xc0000000e0?}, 0x763fb4?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+main.main.corsMiddleware.func3({0x7de638, 0xc0000000e0}, 0xc00022e500)
+	/app/cmd/api/main.go:27 +0x146
+net/http.HandlerFunc.ServeHTTP(0x46c0d9?, {0x7de638?, 0xc0000000e0?}, 0xc00025ab70?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000255350?}, {0x7de638?, 0xc0000000e0?}, 0x6?)
+	/usr/local/go/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000278000, {0x7dea50, 0xc00009f7a0})
+	/usr/local/go/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/usr/local/go/src/net/http/server.go:3454 +0x485
+2026/02/28 07:42:27 172.18.0.1:48446 GET /api/all
+2026/02/28 07:42:28 http: panic serving 172.18.0.1:48446: runtime error: invalid memory address or nil pointer dereference
+goroutine 26 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1947 +0xbe
+panic({0x70b520?, 0x9f6820?})
+	/usr/local/go/src/runtime/panic.go:792 +0x132
+github.com/avirooppal/gosysutil/api.HandleAll({0x7de638, 0xc0002e0000}, 0xc0002569f0?)
+	/app/api/server.go:317 +0x1ec6
+net/http.HandlerFunc.ServeHTTP(0xc0000c20c0?, {0x7de638?, 0xc0002e0000?}, 0xc000256a18?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00009e1b0?, {0x7de638, 0xc0002e0000}, 0xc0000dc3c0)
+	/usr/local/go/src/net/http/server.go:2822 +0x1c4
+main.main.func1({0x7de638, 0xc0002e0000}, 0xc0000dc3c0)
+	/app/cmd/api/main.go:48 +0x147
+net/http.HandlerFunc.ServeHTTP(0xc00028be90?, {0x7de638?, 0xc0002e0000?}, 0x763fb4?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+main.main.corsMiddleware.func3({0x7de638, 0xc0002e0000}, 0xc0000dc3c0)
+	/app/cmd/api/main.go:27 +0x146
+net/http.HandlerFunc.ServeHTTP(0x46c0d9?, {0x7de638?, 0xc0002e0000?}, 0xc000256b70?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0001d6a80?}, {0x7de638?, 0xc0002e0000?}, 0x6?)
+	/usr/local/go/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000ea480, {0x7dea50, 0xc00009f7a0})
+	/usr/local/go/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/usr/local/go/src/net/http/server.go:3454 +0x485
+2026/02/28 07:42:30 172.18.0.1:48454 GET /api/all
+2026/02/28 07:42:31 http: panic serving 172.18.0.1:48454: runtime error: invalid memory address or nil pointer dereference
+goroutine 62 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1947 +0xbe
+panic({0x70b520?, 0x9f6820?})
+	/usr/local/go/src/runtime/panic.go:792 +0x132
+github.com/avirooppal/gosysutil/api.HandleAll({0x7de638, 0xc00019e0e0}, 0xc0000929f0?)
+	/app/api/server.go:317 +0x1ec6
+net/http.HandlerFunc.ServeHTTP(0xc0000c20c0?, {0x7de638?, 0xc00019e0e0?}, 0xc000092a18?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00009e1b0?, {0x7de638, 0xc00019e0e0}, 0xc0000dc500)
+	/usr/local/go/src/net/http/server.go:2822 +0x1c4
+main.main.func1({0x7de638, 0xc00019e0e0}, 0xc0000dc500)
+	/app/cmd/api/main.go:48 +0x147
+net/http.HandlerFunc.ServeHTTP(0xc0001d6ba0?, {0x7de638?, 0xc00019e0e0?}, 0x763fb4?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+main.main.corsMiddleware.func3({0x7de638, 0xc00019e0e0}, 0xc0000dc500)
+	/app/cmd/api/main.go:27 +0x146
+net/http.HandlerFunc.ServeHTTP(0x46c0d9?, {0x7de638?, 0xc00019e0e0?}, 0xc000092b70?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0001d6ae0?}, {0x7de638?, 0xc00019e0e0?}, 0x6?)
+	/usr/local/go/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000278120, {0x7dea50, 0xc00009f7a0})
+	/usr/local/go/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/usr/local/go/src/net/http/server.go:3454 +0x485
+2026/02/28 07:42:35 172.18.0.1:43744 GET /api/all
+2026/02/28 07:42:36 http: panic serving 172.18.0.1:43744: runtime error: invalid memory address or nil pointer dereference
+goroutine 97 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1947 +0xbe
+panic({0x70b520?, 0x9f6820?})
+	/usr/local/go/src/runtime/panic.go:792 +0x132
+github.com/avirooppal/gosysutil/api.HandleAll({0x7de638, 0xc0003c8000}, 0xc0002579f0?)
+	/app/api/server.go:317 +0x1ec6
+net/http.HandlerFunc.ServeHTTP(0xc0000c20c0?, {0x7de638?, 0xc0003c8000?}, 0xc000257a18?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00009e1b0?, {0x7de638, 0xc0003c8000}, 0xc000168500)
+	/usr/local/go/src/net/http/server.go:2822 +0x1c4
+main.main.func1({0x7de638, 0xc0003c8000}, 0xc000168500)
+	/app/cmd/api/main.go:48 +0x147
+net/http.HandlerFunc.ServeHTTP(0xc000395680?, {0x7de638?, 0xc0003c8000?}, 0x763fb4?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+main.main.corsMiddleware.func3({0x7de638, 0xc0003c8000}, 0xc000168500)
+	/app/cmd/api/main.go:27 +0x146
+net/http.HandlerFunc.ServeHTTP(0x46c0d9?, {0x7de638?, 0xc0003c8000?}, 0xc000257b70?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0003955c0?}, {0x7de638?, 0xc0003c8000?}, 0x6?)
+	/usr/local/go/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc00039a090, {0x7dea50, 0xc00009f7a0})
+	/usr/local/go/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/usr/local/go/src/net/http/server.go:3454 +0x485
+2026/02/28 07:42:41 172.18.0.1:43758 GET /api/all
+2026/02/28 07:42:42 http: panic serving 172.18.0.1:43758: runtime error: invalid memory address or nil pointer dereference
+goroutine 105 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1947 +0xbe
+panic({0x70b520?, 0x9f6820?})
+	/usr/local/go/src/runtime/panic.go:792 +0x132
+github.com/avirooppal/gosysutil/api.HandleAll({0x7de638, 0xc0003c80e0}, 0xc0002589f0?)
+	/app/api/server.go:317 +0x1ec6
+net/http.HandlerFunc.ServeHTTP(0xc0000c20c0?, {0x7de638?, 0xc0003c80e0?}, 0xc000258a18?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00009e1b0?, {0x7de638, 0xc0003c80e0}, 0xc0003d4b40)
+	/usr/local/go/src/net/http/server.go:2822 +0x1c4
+main.main.func1({0x7de638, 0xc0003c80e0}, 0xc0003d4b40)
+	/app/cmd/api/main.go:48 +0x147
+net/http.HandlerFunc.ServeHTTP(0xc0003e8960?, {0x7de638?, 0xc0003c80e0?}, 0x763fb4?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+main.main.corsMiddleware.func3({0x7de638, 0xc0003c80e0}, 0xc0003d4b40)
+	/app/cmd/api/main.go:27 +0x146
+net/http.HandlerFunc.ServeHTTP(0x46c0d9?, {0x7de638?, 0xc0003c80e0?}, 0xc000258b70?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0003e88d0?}, {0x7de638?, 0xc0003c80e0?}, 0x6?)
+	/usr/local/go/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc00039a1b0, {0x7dea50, 0xc00009f7a0})
+	/usr/local/go/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/usr/local/go/src/net/http/server.go:3454 +0x485
+2026/02/28 07:42:43 172.18.0.1:43762 GET /api/all
+2026/02/28 07:42:44 http: panic serving 172.18.0.1:43762: runtime error: invalid memory address or nil pointer dereference
+goroutine 152 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1947 +0xbe
+panic({0x70b520?, 0x9f6820?})
+	/usr/local/go/src/runtime/panic.go:792 +0x132
+github.com/avirooppal/gosysutil/api.HandleAll({0x7de638, 0xc0003c8000}, 0xc0003589f0?)
+	/app/api/server.go:317 +0x1ec6
+net/http.HandlerFunc.ServeHTTP(0xc0000c20c0?, {0x7de638?, 0xc0003c8000?}, 0xc000358a18?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00009e1b0?, {0x7de638, 0xc0003c8000}, 0xc0000dc000)
+	/usr/local/go/src/net/http/server.go:2822 +0x1c4
+main.main.func1({0x7de638, 0xc0003c8000}, 0xc0000dc000)
+	/app/cmd/api/main.go:48 +0x147
+net/http.HandlerFunc.ServeHTTP(0xc00042a0c0?, {0x7de638?, 0xc0003c8000?}, 0x763fb4?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+main.main.corsMiddleware.func3({0x7de638, 0xc0003c8000}, 0xc0000dc000)
+	/app/cmd/api/main.go:27 +0x146
+net/http.HandlerFunc.ServeHTTP(0x46c0d9?, {0x7de638?, 0xc0003c8000?}, 0xc000358b70?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc00042a030?}, {0x7de638?, 0xc0003c8000?}, 0x6?)
+	/usr/local/go/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc00039a000, {0x7dea50, 0xc00009f7a0})
+	/usr/local/go/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/usr/local/go/src/net/http/server.go:3454 +0x485
+2026/02/28 07:42:46 172.18.0.1:41184 GET /api/all
+2026/02/28 07:42:47 http: panic serving 172.18.0.1:41184: runtime error: invalid memory address or nil pointer dereference
+goroutine 168 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1947 +0xbe
+panic({0x70b520?, 0x9f6820?})
+	/usr/local/go/src/runtime/panic.go:792 +0x132
+github.com/avirooppal/gosysutil/api.HandleAll({0x7de638, 0xc000162000}, 0xc0003569f0?)
+	/app/api/server.go:317 +0x1ec6
+net/http.HandlerFunc.ServeHTTP(0xc0000c20c0?, {0x7de638?, 0xc000162000?}, 0xc000356a18?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00009e1b0?, {0x7de638, 0xc000162000}, 0xc00013a000)
+	/usr/local/go/src/net/http/server.go:2822 +0x1c4
+main.main.func1({0x7de638, 0xc000162000}, 0xc00013a000)
+	/app/cmd/api/main.go:48 +0x147
+net/http.HandlerFunc.ServeHTTP(0xc000255320?, {0x7de638?, 0xc000162000?}, 0x763fb4?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+main.main.corsMiddleware.func3({0x7de638, 0xc000162000}, 0xc00013a000)
+	/app/cmd/api/main.go:27 +0x146
+net/http.HandlerFunc.ServeHTTP(0x46c0d9?, {0x7de638?, 0xc000162000?}, 0xc000356b70?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000255290?}, {0x7de638?, 0xc000162000?}, 0x6?)
+	/usr/local/go/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc00042e000, {0x7dea50, 0xc00009f7a0})
+	/usr/local/go/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/usr/local/go/src/net/http/server.go:3454 +0x485
+2026/02/28 07:43:02 172.18.0.1:45192 GET /api/all
+2026/02/28 07:43:03 http: panic serving 172.18.0.1:45192: runtime error: invalid memory address or nil pointer dereference
+goroutine 157 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1947 +0xbe
+panic({0x70b520?, 0x9f6820?})
+	/usr/local/go/src/runtime/panic.go:792 +0x132
+github.com/avirooppal/gosysutil/api.HandleAll({0x7de638, 0xc000224000}, 0xc0001229f0?)
+	/app/api/server.go:317 +0x1ec6
+net/http.HandlerFunc.ServeHTTP(0xc0000c20c0?, {0x7de638?, 0xc000224000?}, 0xc000122a18?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00009e1b0?, {0x7de638, 0xc000224000}, 0xc0004e6500)
+	/usr/local/go/src/net/http/server.go:2822 +0x1c4
+main.main.func1({0x7de638, 0xc000224000}, 0xc0004e6500)
+	/app/cmd/api/main.go:48 +0x147
+net/http.HandlerFunc.ServeHTTP(0xc00028b4d0?, {0x7de638?, 0xc000224000?}, 0x763fb4?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+main.main.corsMiddleware.func3({0x7de638, 0xc000224000}, 0xc0004e6500)
+	/app/cmd/api/main.go:27 +0x146
+net/http.HandlerFunc.ServeHTTP(0x46c0d9?, {0x7de638?, 0xc000224000?}, 0xc000122b70?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc00028b440?}, {0x7de638?, 0xc000224000?}, 0x6?)
+	/usr/local/go/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc00039a090, {0x7dea50, 0xc00009f7a0})
+	/usr/local/go/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/usr/local/go/src/net/http/server.go:3454 +0x485
+2026/02/28 07:43:08 172.18.0.1:51920 GET /api/all
+2026/02/28 07:43:09 http: panic serving 172.18.0.1:51920: runtime error: invalid memory address or nil pointer dereference
+goroutine 219 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1947 +0xbe
+panic({0x70b520?, 0x9f6820?})
+	/usr/local/go/src/runtime/panic.go:792 +0x132
+github.com/avirooppal/gosysutil/api.HandleAll({0x7de638, 0xc0003c81c0}, 0xc0001239f0?)
+	/app/api/server.go:317 +0x1ec6
+net/http.HandlerFunc.ServeHTTP(0xc0000c20c0?, {0x7de638?, 0xc0003c81c0?}, 0xc000123a18?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00009e1b0?, {0x7de638, 0xc0003c81c0}, 0xc0002ea000)
+	/usr/local/go/src/net/http/server.go:2822 +0x1c4
+main.main.func1({0x7de638, 0xc0003c81c0}, 0xc0002ea000)
+	/app/cmd/api/main.go:48 +0x147
+net/http.HandlerFunc.ServeHTTP(0xc000228a50?, {0x7de638?, 0xc0003c81c0?}, 0x763fb4?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+main.main.corsMiddleware.func3({0x7de638, 0xc0003c81c0}, 0xc0002ea000)
+	/app/cmd/api/main.go:27 +0x146
+net/http.HandlerFunc.ServeHTTP(0x46c0d9?, {0x7de638?, 0xc0003c81c0?}, 0xc000123b70?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0003e9590?}, {0x7de638?, 0xc0003c81c0?}, 0x6?)
+	/usr/local/go/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0002c0090, {0x7dea50, 0xc00009f7a0})
+	/usr/local/go/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/usr/local/go/src/net/http/server.go:3454 +0x485
+2026/02/28 07:43:19 172.18.0.1:52568 GET /api/all
+2026/02/28 07:43:20 http: panic serving 172.18.0.1:52568: runtime error: invalid memory address or nil pointer dereference
+goroutine 203 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1947 +0xbe
+panic({0x70b520?, 0x9f6820?})
+	/usr/local/go/src/runtime/panic.go:792 +0x132
+github.com/avirooppal/gosysutil/api.HandleAll({0x7de638, 0xc0001620e0}, 0xc0003569f0?)
+	/app/api/server.go:317 +0x1ec6
+net/http.HandlerFunc.ServeHTTP(0xc0000c20c0?, {0x7de638?, 0xc0001620e0?}, 0xc000356a18?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00009e1b0?, {0x7de638, 0xc0001620e0}, 0xc00018e780)
+	/usr/local/go/src/net/http/server.go:2822 +0x1c4
+main.main.func1({0x7de638, 0xc0001620e0}, 0xc00018e780)
+	/app/cmd/api/main.go:48 +0x147
+net/http.HandlerFunc.ServeHTTP(0xc0001bced0?, {0x7de638?, 0xc0001620e0?}, 0x763fb4?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+main.main.corsMiddleware.func3({0x7de638, 0xc0001620e0}, 0xc00018e780)
+	/app/cmd/api/main.go:27 +0x146
+net/http.HandlerFunc.ServeHTTP(0x46c0d9?, {0x7de638?, 0xc0001620e0?}, 0xc000356b70?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0001bce40?}, {0x7de638?, 0xc0001620e0?}, 0x1?)
+	/usr/local/go/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc00042e2d0, {0x7dea50, 0xc00009f7a0})
+	/usr/local/go/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/usr/local/go/src/net/http/server.go:3454 +0x485
+2026/02/28 07:43:25 172.18.0.1:52570 GET /api/all
+2026/02/28 07:43:26 http: panic serving 172.18.0.1:52570: runtime error: invalid memory address or nil pointer dereference
+goroutine 276 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1947 +0xbe
+panic({0x70b520?, 0x9f6820?})
+	/usr/local/go/src/runtime/panic.go:792 +0x132
+github.com/avirooppal/gosysutil/api.HandleAll({0x7de638, 0xc0001621c0}, 0xc0003569f0?)
+	/app/api/server.go:317 +0x1ec6
+net/http.HandlerFunc.ServeHTTP(0xc0000c20c0?, {0x7de638?, 0xc0001621c0?}, 0xc000356a18?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00009e1b0?, {0x7de638, 0xc0001621c0}, 0xc0001dadc0)
+	/usr/local/go/src/net/http/server.go:2822 +0x1c4
+main.main.func1({0x7de638, 0xc0001621c0}, 0xc0001dadc0)
+	/app/cmd/api/main.go:48 +0x147
+net/http.HandlerFunc.ServeHTTP(0xc000388000?, {0x7de638?, 0xc0001621c0?}, 0x763fb4?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+main.main.corsMiddleware.func3({0x7de638, 0xc0001621c0}, 0xc0001dadc0)
+	/app/cmd/api/main.go:27 +0x146
+net/http.HandlerFunc.ServeHTTP(0x46c0d9?, {0x7de638?, 0xc0001621c0?}, 0xc000356b70?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc0001e1ef0?}, {0x7de638?, 0xc0001621c0?}, 0x6?)
+	/usr/local/go/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc00042e3f0, {0x7dea50, 0xc00009f7a0})
+	/usr/local/go/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/usr/local/go/src/net/http/server.go:3454 +0x485
+2026/02/28 07:43:28 172.18.0.1:56570 GET /api/all
+2026/02/28 07:43:29 http: panic serving 172.18.0.1:56570: runtime error: invalid memory address or nil pointer dereference
+goroutine 226 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1947 +0xbe
+panic({0x70b520?, 0x9f6820?})
+	/usr/local/go/src/runtime/panic.go:792 +0x132
+github.com/avirooppal/gosysutil/api.HandleAll({0x7de638, 0xc0003c82a0}, 0xc0003559f0?)
+	/app/api/server.go:317 +0x1ec6
+net/http.HandlerFunc.ServeHTTP(0xc0000c20c0?, {0x7de638?, 0xc0003c82a0?}, 0xc000355a18?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.(*ServeMux).ServeHTTP(0xc00009e1b0?, {0x7de638, 0xc0003c82a0}, 0xc00030edc0)
+	/usr/local/go/src/net/http/server.go:2822 +0x1c4
+main.main.func1({0x7de638, 0xc0003c82a0}, 0xc00030edc0)
+	/app/cmd/api/main.go:48 +0x147
+net/http.HandlerFunc.ServeHTTP(0xc0002299b0?, {0x7de638?, 0xc0003c82a0?}, 0x763fb4?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+main.main.corsMiddleware.func3({0x7de638, 0xc0003c82a0}, 0xc00030edc0)
+	/app/cmd/api/main.go:27 +0x146
+net/http.HandlerFunc.ServeHTTP(0x46c0d9?, {0x7de638?, 0xc0003c82a0?}, 0xc000355b70?)
+	/usr/local/go/src/net/http/server.go:2294 +0x29
+net/http.serverHandler.ServeHTTP({0xc000229920?}, {0x7de638?, 0xc0003c82a0?}, 0x6?)
+	/usr/local/go/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0000ea480, {0x7dea50, 0xc00009f7a0})
+	/usr/local/go/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	/usr/local/go/src/net/http/server.go:3454 +0x485

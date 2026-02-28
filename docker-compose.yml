@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  # ── Go API Backend ─────────────────────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: servermoni-backend
+    restart: unless-stopped
+    environment:
+      PORT: "5001"
+      CORS_ORIGIN: "http://localhost"   # frontend Nginx container
+    env_file:
+      - ./backend/.env                  # merge local overrides
+    ports:
+      - "5001:5001"                     # expose for direct access / debugging
+    networks:
+      - servermoni-net
+
+  # ── React Frontend (Nginx) ─────────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: servermoni-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"                         # main dashboard URL: http://localhost
+    depends_on:
+      - backend
+    networks:
+      - servermoni-net
+
+networks:
+  servermoni-net:
+    driver: bridge

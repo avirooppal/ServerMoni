@@ -1,0 +1,17 @@
+# Go build artifacts
+*.exe
+*.dll
+*.so
+*.dylib
+api.exe
+
+# Test files
+*_test.go
+
+# Git
+.git
+.gitignore
+
+# Dev environment
+.env.local
+.vscode

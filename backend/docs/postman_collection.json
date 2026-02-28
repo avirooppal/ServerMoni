@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "4b68f3a3-7e5d-4c8d-9c3a-3c7f8a7d6e5a",
+		"name": "gosysutil API",
+		"description": "API collection for gosysutil system metrics. All outputs are human-readable and sensible.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CPU Metrics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/cpu",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"cpu"
+					]
+				},
+				"description": "Returns a detailed breakdown of CPU usage percentages (Total, User, System, Idle). The metrics are calculated by sampling CPU activity over a 500ms interval to provide accurate real-time usage."
+			},
+			"response": []
+		},
+		{
+			"name": "Disk Metrics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/disk",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"disk"
+					]
+				},
+				"description": "Returns a list of all physical disks (excluding loop/ram devices) with their cumulative read and write counts since the system started."
+			},
+			"response": []
+		},
+		{
+			"name": "Memory Metrics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/memory",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"memory"
+					]
+				},
+				"description": "Returns memory usage statistics including Total, Used, and Free memory, plus Swap details. Values are formatted in human-readable units (e.g., GB, MB) and include a 'percent_used' field for quick assessment."
+			},
+			"response": []
+		},
+		{
+			"name": "Network Metrics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/network",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"network"
+					]
+				},
+				"description": "Returns traffic statistics (Received and Sent bytes) and packet counts for all network interfaces. Data sizes are automatically scaled to human-friendly units (KB, MB, GB)."
+			},
+			"response": []
+		},
+		{
+			"name": "Process Metrics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/process",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"process"
+					]
+				},
+				"description": "Returns a list of all running processes with their PID, name, memory usage (RSS), and the command used to start them."
+			},
+			"response": []
+		},
+		{
+			"name": "All-in-One Summary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/all",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"all"
+					]
+				},
+				"description": "Returns a comprehensive snapshot of the entire system in a single JSON response, including refined CPU breakdown, memory summary, disk inventory, and network status."
+			},
+			"response": []
+		},
+		{
+			"name": "Load Average",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/loadavg",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"loadavg"
+					]
+				},
+				"description": "Returns the system load averages for 1, 5, and 15 minute intervals. Useful for understanding system load trends."
+			},
+			"response": []
+		},
+		{
+			"name": "System Uptime",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/uptime",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"uptime"
+					]
+				},
+				"description": "Returns the system uptime in seconds and a human-readable formatted string (e.g., '5d 12h 30m')."
+			},
+			"response": []
+		},
+		{
+			"name": "Top CPU Processes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/topcpu",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"topcpu"
+					]
+				},
+				"description": "Returns the top 5 processes sorted by CPU time (user + system ticks). Shows PID, name, CPU time, memory usage, and command."
+			},
+			"response": []
+		},
+		{
+			"name": "Top RAM Processes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/topram",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"topram"
+					]
+				},
+				"description": "Returns the top 5 processes sorted by memory usage (RSS). Shows PID, name, memory in human-readable format, and command."
+			},
+			"response": []
+		},
+		{
+			"name": "Steal/IOWait (VPS)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/steal",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"steal"
+					]
+				},
+				"description": "Returns CPU steal time and IO wait percentages. Particularly useful for VPS environments to detect hypervisor resource contention."
+			},
+			"response": []
+		},
+		{
+			"name": "Socket Statistics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/sockstat",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"sockstat"
+					]
+				},
+				"description": "Returns socket statistics from /proc/net/sockstat including TCP/UDP connection counts, memory usage, orphans, and TIME_WAIT sockets."
+			},
+			"response": []
+		},
+		{
+			"name": "File Descriptors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/filenr",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"filenr"
+					]
+				},
+				"description": "Returns file descriptor usage from /proc/sys/fs/file-nr including allocated, free, max, and usage percentage."
+			},
+			"response": []
+		},
+		{
+			"name": "Pressure (PSI)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/pressure",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"pressure"
+					]
+				},
+				"description": "Returns Pressure Stall Information (PSI) for CPU, Memory, and IO from /proc/pressure/*. Shows some/full averages at 10s, 60s, and 300s intervals."
+			},
+			"response": []
+		},
+		{
+			"name": "VM Statistics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/vmstat",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"vmstat"
+					]
+				},
+				"description": "Returns virtual memory statistics from /proc/vmstat including page faults (minor/major), paging in/out, swap activity, OOM kills, and NUMA stats."
+			},
+			"response": []
+		},
+		{
+			"name": "SNMP Network Stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/snmp",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"snmp"
+					]
+				},
+				"description": "Returns SNMP network statistics from /proc/net/snmp including IP/TCP/UDP packet counts, errors, retransmissions, and current connections."
+			},
+			"response": []
+		},
+		{
+			"name": "Extended Network Stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/netstat",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"netstat"
+					]
+				},
+				"description": "Returns extended network statistics from /proc/net/netstat including TCP syncookies, listen overflows/drops, timeouts, and IP octet counts."
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:5001",
+			"type": "string"
+		}
+	]
+}
