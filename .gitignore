@@ -22,9 +22,8 @@ backend/api
 backend/bin/
 backend/vendor/
 
-# Environment Variables
-.env
-backend/.env
+
+
 
 # Temporary and Log files
 *.log
