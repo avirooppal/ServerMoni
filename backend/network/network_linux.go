@@ -7,6 +7,8 @@ import (
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/avirooppal/gosysutil/utils"
 )
 
 // NetworkStats represents network interface statistics from /proc/net/dev
@@ -24,7 +26,7 @@ type NetworkStats struct {
 
 // GetNetwork returns network statistics for all interfaces in /proc/net/dev
 func GetNetwork() ([]NetworkStats, error) {
-	file, err := os.Open("/proc/net/dev")
+	file, err := os.Open(utils.GetProcPath() + "/net/dev")
 	if err != nil {
 		return nil, err
 	}

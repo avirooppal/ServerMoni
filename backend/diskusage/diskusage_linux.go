@@ -5,6 +5,8 @@ package diskusage
 import (
 	"fmt"
 	"syscall"
+
+	"github.com/avirooppal/gosysutil/utils"
 )
 
 func getDiskUsagePlatform() ([]DiskUsage, error) {
@@ -14,7 +16,7 @@ func getDiskUsagePlatform() ([]DiskUsage, error) {
 
 	for _, mount := range mounts {
 		var stat syscall.Statfs_t
-		if err := syscall.Statfs(mount, &stat); err != nil {
+		if err := syscall.Statfs(utils.GetHostPath(mount), &stat); err != nil {
 			continue
 		}
 		total := stat.Blocks * uint64(stat.Bsize)

@@ -9,6 +9,8 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/avirooppal/gosysutil/utils"
 )
 
 // CPUStats represents CPU statistics from /proc/stat
@@ -34,7 +36,7 @@ type CoreUsage struct {
 
 // GetCPU returns the aggregate CPU statistics from /proc/stat
 func GetCPU() (*CPUStats, error) {
-	file, err := os.Open("/proc/stat")
+	file, err := os.Open(utils.GetProcPath() + "/stat")
 	if err != nil {
 		return nil, err
 	}
@@ -58,7 +60,7 @@ func GetCPU() (*CPUStats, error) {
 
 // readAllCores reads the per-core lines (cpu0, cpu1, …) from /proc/stat
 func readAllCores() ([]CPUStats, error) {
-	file, err := os.Open("/proc/stat")
+	file, err := os.Open(utils.GetProcPath() + "/stat")
 	if err != nil {
 		return nil, err
 	}

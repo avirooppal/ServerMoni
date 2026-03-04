@@ -2,11 +2,14 @@ package sysinfo
 
 import (
 	"fmt"
+	"io/ioutil"
 	"net"
 	"os"
 	"os/exec"
 	"runtime"
 	"strings"
+
+	"github.com/avirooppal/gosysutil/utils"
 )
 
 // SysInfo holds system identification data
@@ -26,15 +29,40 @@ func GetSysInfo() (*SysInfo, error) {
 		Arch: runtime.GOARCH,
 	}
 
-	// Hostname
-	if h, err := os.Hostname(); err == nil {
+	// Hostname - try host mount first
+	if b, err := ioutil.ReadFile(utils.GetProcPath() + "/sys/kernel/hostname"); err == nil {
+		info.Hostname = strings.TrimSpace(string(b))
+	} else if h, err := os.Hostname(); err == nil {
 		info.Hostname = h
 	} else {
 		info.Hostname = "unknown"
 	}
 
-	// Kernel version
-	info.Kernel = getKernel()
+	// Kernel version - try host mount first
+	if b, err := ioutil.ReadFile(utils.GetProcPath() + "/sys/kernel/osrelease"); err == nil {
+		info.Kernel = strings.TrimSpace(string(b))
+	} else {
+		info.Kernel = getKernel()
+	}
+
+	// OS from host environment or os-release
+	if b, err := ioutil.ReadFile(utils.GetHostPath("/etc/os-release")); err == nil {
+		lines := strings.Split(string(b), "\n")
+		for _, line := range lines {
+			if strings.HasPrefix(line, "PRETTY_NAME=") {
+				info.OS = strings.Trim(strings.TrimPrefix(line, "PRETTY_NAME="), "\"")
+				break
+			}
+		}
+	} else if b, err := ioutil.ReadFile(utils.GetHostPath("/usr/lib/os-release")); err == nil {
+		lines := strings.Split(string(b), "\n")
+		for _, line := range lines {
+			if strings.HasPrefix(line, "PRETTY_NAME=") {
+				info.OS = strings.Trim(strings.TrimPrefix(line, "PRETTY_NAME="), "\"")
+				break
+			}
+		}
+	}
 
 	// CPU Model
 	info.CPUModel = getCPUModel()
@@ -78,12 +106,21 @@ func getCPUModel() string {
 		}
 		return "unknown"
 	default:
-		out, err := exec.Command("sh", "-c",
-			`grep -m1 "model name" /proc/cpuinfo | cut -d: -f2`).Output()
+		// Read from utils.GetProcPath() + "/cpuinfo"
+		b, err := ioutil.ReadFile(utils.GetProcPath() + "/cpuinfo")
 		if err != nil {
 			return "unknown"
 		}
-		return strings.TrimSpace(string(out))
+		lines := strings.Split(string(b), "\n")
+		for _, line := range lines {
+			if strings.HasPrefix(line, "model name") {
+				parts := strings.Split(line, ":")
+				if len(parts) > 1 {
+					return strings.TrimSpace(parts[1])
+				}
+			}
+		}
+		return "unknown"
 	}
 }
 

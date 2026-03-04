@@ -7,6 +7,8 @@ import (
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/avirooppal/gosysutil/utils"
 )
 
 // MemoryStats represents memory statistics from /proc/meminfo
@@ -25,7 +27,7 @@ type MemoryStats struct {
 
 // GetMemory returns memory statistics from /proc/meminfo
 func GetMemory() (*MemoryStats, error) {
-	file, err := os.Open("/proc/meminfo")
+	file, err := os.Open(utils.GetProcPath() + "/meminfo")
 	if err != nil {
 		return nil, err
 	}

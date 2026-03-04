@@ -11,10 +11,17 @@ services:
     environment:
       PORT: "5001"
       CORS_ORIGIN: "http://localhost"   # frontend Nginx container
+      HOST_PROC: "/host/proc"
+      HOST_SYS: "/host/sys"
+      HOST_ROOT: "/rootfs"
     env_file:
       - ./backend/.env                  # merge local overrides
     ports:
       - "5001:5001"                     # expose for direct access / debugging
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
     networks:
       - servermoni-net
 

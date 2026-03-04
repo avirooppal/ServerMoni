@@ -7,6 +7,8 @@ import (
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/avirooppal/gosysutil/utils"
 )
 
 // DiskStats represents disk I/O statistics from /proc/diskstats
@@ -27,7 +29,7 @@ type DiskStats struct {
 
 // GetDisk returns disk I/O statistics for all disks found in /proc/diskstats
 func GetDisk() ([]DiskStats, error) {
-	file, err := os.Open("/proc/diskstats")
+	file, err := os.Open(utils.GetProcPath() + "/diskstats")
 	if err != nil {
 		return nil, err
 	}

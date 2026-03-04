@@ -31,3 +31,5 @@ backend/.env
 *.csv
 tmp/
 temp/
+
+backend_logs.txt

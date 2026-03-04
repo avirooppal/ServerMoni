@@ -10,6 +10,8 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+
+	"github.com/avirooppal/gosysutil/utils"
 )
 
 // Process represents a single process and its metrics
@@ -26,7 +28,7 @@ type Process struct {
 
 // GetProcesses returns a list of all running processes
 func GetProcesses() ([]Process, error) {
-	d, err := os.Open("/proc")
+	d, err := os.Open(utils.GetProcPath())
 	if err != nil {
 		return nil, err
 	}
@@ -57,7 +59,7 @@ func GetProcesses() ([]Process, error) {
 
 func parseProcess(pidStr string) (*Process, error) {
 	pid, _ := strconv.Atoi(pidStr)
-	statPath := filepath.Join("/proc", pidStr, "stat")
+	statPath := filepath.Join(utils.GetProcPath(), pidStr, "stat")
 	
 	contents, err := ioutil.ReadFile(statPath)
 	if err != nil {
@@ -97,7 +99,7 @@ func parseProcess(pidStr string) (*Process, error) {
 	rss := rssPages * uint64(os.Getpagesize())
 
 	// Read cmdline for full details
-	cmdPath := filepath.Join("/proc", pidStr, "cmdline")
+	cmdPath := filepath.Join(utils.GetProcPath(), pidStr, "cmdline")
 	cmdContent, _ := ioutil.ReadFile(cmdPath)
 	cmdline := strings.ReplaceAll(string(cmdContent), "\x00", " ")
 	cmdline = strings.TrimSpace(cmdline)

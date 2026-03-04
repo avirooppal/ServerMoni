@@ -9,6 +9,8 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/avirooppal/gosysutil/utils"
 )
 
 // LoadAvg represents system load averages
@@ -32,7 +34,7 @@ type StealIOStats struct {
 
 // GetLoadAvg returns the system load averages from /proc/loadavg
 func GetLoadAvg() (*LoadAvg, error) {
-	file, err := os.Open("/proc/loadavg")
+	file, err := os.Open(utils.GetProcPath() + "/loadavg")
 	if err != nil {
 		return nil, err
 	}
@@ -74,7 +76,7 @@ func GetLoadAvg() (*LoadAvg, error) {
 
 // GetUptime returns the system uptime from /proc/uptime
 func GetUptime() (*UptimeStats, error) {
-	file, err := os.Open("/proc/uptime")
+	file, err := os.Open(utils.GetProcPath() + "/uptime")
 	if err != nil {
 		return nil, err
 	}
@@ -114,7 +116,7 @@ func GetUptime() (*UptimeStats, error) {
 // the hypervisor is using CPU time that was allocated to this VM
 func GetStealIOWait() (*StealIOStats, error) {
 	readStats := func() (iowait, steal, total uint64, err error) {
-		file, err := os.Open("/proc/stat")
+		file, err := os.Open(utils.GetProcPath() + "/stat")
 		if err != nil {
 			return 0, 0, 0, err
 		}
